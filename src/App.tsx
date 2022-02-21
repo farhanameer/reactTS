@@ -1,25 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
+import {BrowserRouter as Router  ,Routes , Route} from 'react-router-dom'
 import './App.css';
+import Header from './components/Header';
+import CreateTask from './pages/CreateTask';
+import ListTask from './pages/ListTask';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    //We can improve the folder structre and many things can be done in different and eligent way
+    // but to be frank ,  I did nothing to do any of things neither in folder structre or in reuse logic 
+    // using services concept and other things
+
+
+   <React.Fragment>
+      
+      <Router>
+        <Header></Header>
+        <Routes>
+          <Route path = "/" element = { <ListTask />}></Route>
+          <Route path = "/create-task" element = { <CreateTask />}></Route>
+        </Routes>
+      </Router>
+   </React.Fragment>
   );
 }
 
